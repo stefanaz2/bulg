@@ -5,5 +5,3 @@ import AboutText from '@/components/AboutText.vue'
 <template>
   <AboutText />
 </template>
-
-<style></style>

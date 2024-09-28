@@ -5,18 +5,28 @@ import NavBar from './components/NavBar.vue'
 
 <template>
   <v-app>
-    <header>
+    <header style="background-color: #2658cb">
       <div class="wrapper">
         <NavBar />
       </div>
     </header>
     <v-main>
+      <img width="100%" src="/src/assets/header.jpg" />
       <RouterView />
     </v-main>
+    <hr />
+    <v-footer style="align-self: center"
+      >© BULGARIAN CANADIAN SOCIETY 2011. All Rights Reserved.
+    </v-footer>
   </v-app>
 </template>
 
 <style scoped>
+.v-main {
+  padding-top: 0;
+  background-color: #dce6fc;
+}
+/* 
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -77,5 +87,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
