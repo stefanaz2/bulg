@@ -14,8 +14,8 @@
     <v-app-bar-title>Bulgarian Canadian Society</v-app-bar-title>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" temporary="true">
-    <v-list-item title="B.C.S." subtitle="Bulgarian Canadian Society"></v-list-item>
+  <v-navigation-drawer v-model="drawer" :temporary="true">
+    <v-list-item title="B.C.S." subtitle="Navigation"></v-list-item>
     <v-divider></v-divider>
     <nav>
       <v-list-item link to="/" title="Home"></v-list-item>
