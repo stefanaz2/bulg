@@ -10,7 +10,9 @@ export default {
   data() {
     return {
       calendarOptions: {
-        plugins: [ dayGridPlugin, interactionPlugin ],
+        // aspectRatio: 1,
+        height: 'auto',
+        plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
         dateClick: this.handleDateClick,
         events: [
@@ -20,9 +22,9 @@ export default {
       }
     }
   },
-  methods:{
-    handleDateClick:function(arg){
-        alert('date click! ' + arg.dateStr)
+  methods: {
+    handleDateClick: function (arg) {
+      alert('date click! ' + arg.dateStr)
     }
   }
 }
@@ -30,3 +32,9 @@ export default {
 <template>
   <FullCalendar :options="calendarOptions" />
 </template>
+<style>
+.fc .fc-button .fc-icon {
+  font-size: inherit !important;
+  vertical-align: revert !important;
+}
+</style>
