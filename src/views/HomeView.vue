@@ -61,7 +61,7 @@ const items = [
 </script>
 
 <template>
-  <v-row>
+  <v-row style="max-height: 100%">
     <v-col cols="8" style="margin: 0 auto 1rem auto">
       <v-card elevation="16" style="margin-bottom: 2rem">
         <HomeCarousel />
@@ -71,26 +71,25 @@ const items = [
       </v-card>
     </v-col>
 
-    <v-col cols="4">
-      <v-card title="More stories" elevation="16">
+    <v-col cols="4" style="max-height: 100%">
+      <v-card class="mx-auto" title="More stories" elevation="16">
         <v-divider></v-divider>
         <div class="scroll-container">
-          <v-virtual-scroll :items="items">
+          <v-virtual-scroll :items="items" :item-height="174">
             <template v-slot:default="{ item }">
-              <v-card-item>
-                <span>
-                  <b> {{ item.title }} </b><br />
-                </span>
-                <div class="scroll-item-flex">
-                  <p>&emsp;{{ item.description }}</p>
+              <v-list-item>
+                <div class="text-flex">
+                  <div style="display: flex; flex-wrap: wrap">
+                    <span>
+                      <v-list-item-title> {{ item.title }} </v-list-item-title>
+                    </span>
+                    <p style="max-height: 100px">&emsp;{{ item.description }}</p>
+                  </div>
 
-                  <img
-                    :src="item.src"
-                    style="max-height: 100px; height: 100%; width: auto; border-radius: 5%"
-                  />
+                  <img :src="item.src" class="container-item-img" />
                 </div>
                 <v-divider style="margin-top: 3px"></v-divider>
-              </v-card-item>
+              </v-list-item>
             </template>
           </v-virtual-scroll>
         </div>
@@ -100,26 +99,36 @@ const items = [
 </template>
 
 <style scoped>
-p {
-  /* padding-top: 1rem; */
 
+.v-card-title{
+  font-weight: bold !important;
+}
+
+.v-list-item-title{
+  font-weight: bold;
+}
+
+p {
   -webkit-line-clamp: 4;
   line-clamp: 4;
   overflow: hidden;
   display: -webkit-box;
-  /* max-width: 400px; */
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
 
 .scroll-container {
   display: flex;
-  max-height: 93vh;
+  height: 93vh;
   align-self: center;
 }
+.container-item-img {
+  width: 50%;
+  border-radius: 5%;
+}
 
-.scroll-item-flex {
+.text-flex {
   display: flex;
-  align-content: center;
+  padding:1rem
 }
 </style>

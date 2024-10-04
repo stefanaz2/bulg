@@ -5,3 +5,7 @@
   padding: 2rem;
   font-weight: normal;
 }
+
+img{
+  object-fit: cover;
+}

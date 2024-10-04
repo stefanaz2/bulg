@@ -18,25 +18,26 @@ defineProps({ event: Object })
 .text {
   float: right;
   align-self: center;
-  padding-left: 1rem;
-  align-items: flex-end;
+  padding-left: 5rem;
+  flex-grow: 0.75;
 }
 
 @media only screen and (max-width: 1400px) {
   img {
-    border-radius: 5%;
     min-width: 200px;
     width: 100% !important;
     max-height: 300px;
     height: auto;
+    border-radius: 10%;
   }
 }
 img {
-  border-radius: 5%;
+  padding: 1rem;
   min-width: 200px;
-  width: auto;
+  width: 100%;
   max-height: 300px;
   height: auto;
+  border-radius: 10%;
 }
 
 p {
