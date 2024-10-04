@@ -61,7 +61,7 @@ const items = [
 </script>
 
 <template>
-  <v-row style="max-height: 100%">
+  <v-row >
     <v-col cols="8" style="margin: 0 auto 1rem auto">
       <v-card elevation="16" style="margin-bottom: 2rem">
         <HomeCarousel />
@@ -71,11 +71,11 @@ const items = [
       </v-card>
     </v-col>
 
-    <v-col cols="4" style="max-height: 100%">
+    <v-col cols="4" >
       <v-card class="mx-auto" title="More stories" elevation="16">
         <v-divider></v-divider>
         <div class="scroll-container">
-          <v-virtual-scroll :items="items" :item-height="174">
+          <v-virtual-scroll :items="items" :item-height="174" style="flex: 1;">
             <template v-slot:default="{ item }">
               <v-list-item>
                 <div class="text-flex">
@@ -119,7 +119,7 @@ p {
 
 .scroll-container {
   display: flex;
-  height: 93vh;
+  min-height: 0;
   align-self: center;
 }
 .container-item-img {

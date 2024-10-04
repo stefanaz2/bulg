@@ -10,7 +10,7 @@ import NavBar from './components/NavBar.vue'
         <NavBar />
       </div>
     </header>
-    <v-main style="height: 100vh">
+    <v-main style="min-height: 100vh">
       <RouterView />
     </v-main>
     <hr />

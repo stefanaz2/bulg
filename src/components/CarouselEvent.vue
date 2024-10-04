@@ -1,10 +1,10 @@
 <template>
-  <v-row>
+  <v-row class="hero">
     <v-col class="text">
       <h2>{{ event.title }}</h2>
       <p>&emsp;{{ event.description }}</p>
     </v-col>
-    <v-col>
+    <v-col style="align-self: center">
       <img :src="event.src" />
     </v-col>
   </v-row>
@@ -30,14 +30,20 @@ defineProps({ event: Object })
     height: auto;
     border-radius: 10%;
   }
+
+  .hero{
+    height: fit-content !important
+  }
 }
 img {
   padding: 1rem;
-  min-width: 200px;
   width: 100%;
-  max-height: 300px;
   height: auto;
   border-radius: 10%;
+}
+
+.hero{
+  height: 500px;
 }
 
 p {
