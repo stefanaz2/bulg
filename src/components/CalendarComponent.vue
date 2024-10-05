@@ -33,8 +33,20 @@ export default {
   <FullCalendar :options="calendarOptions" />
 </template>
 <style>
+
+.fc{
+  white-space: nowrap;
+}
+
 .fc .fc-toolbar{
-  justify-content: space-around;
+  justify-content: center;
+  padding:1rem;
+  flex-wrap:wrap;
+  gap:2rem;
+}
+
+.fc .fc-toolbar-title{
+  white-space: nowrap;
 }
 
 .fc .fc-button .fc-icon {
