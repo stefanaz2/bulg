@@ -11,7 +11,7 @@
       />
     </template>
 
-    <v-app-bar-title>Bulgarian Canadian Society</v-app-bar-title>
+    <v-app-bar-title style="font-weight: bolder; font-size: 26px;" tag="h1">Bulgarian Canadian Society</v-app-bar-title>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" :temporary="true">

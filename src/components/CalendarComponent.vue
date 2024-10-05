@@ -33,6 +33,10 @@ export default {
   <FullCalendar :options="calendarOptions" />
 </template>
 <style>
+.fc .fc-toolbar{
+  justify-content: space-around;
+}
+
 .fc .fc-button .fc-icon {
   font-size: inherit !important;
   vertical-align: revert !important;

@@ -61,9 +61,9 @@ const items = [
 </script>
 
 <template>
-  <v-row >
-    <v-col cols="8" style="margin: 0 auto 1rem auto">
-      <v-card elevation="16" style="margin-bottom: 2rem">
+  <v-row class="fill-height">
+    <v-col class="d-flex flex-column fill-height" cols="8" style="margin: 0 auto 1rem auto">
+      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem">
         <HomeCarousel />
       </v-card>
       <v-card :variant="'outlined'" elevation="5">
@@ -71,11 +71,11 @@ const items = [
       </v-card>
     </v-col>
 
-    <v-col cols="4" >
-      <v-card class="mx-auto" title="More stories" elevation="16">
+    <v-col cols="4" class="d-flex flex-column fill-height">
+      <v-card class="mx-auto d-flex flex-column fill-height" :variant="'outlined'" elevation="5">
+        <v-card-title>More stories</v-card-title>
         <v-divider></v-divider>
-        <div class="scroll-container">
-          <v-virtual-scroll :items="items" :item-height="174" style="flex: 1;">
+          <v-virtual-scroll class="flex-grow-1" style="height:500px; overflow: auto;" :items="items" :item-height="174">
             <template v-slot:default="{ item }">
               <v-list-item>
                 <div class="text-flex">
@@ -92,7 +92,6 @@ const items = [
               </v-list-item>
             </template>
           </v-virtual-scroll>
-        </div>
       </v-card>
     </v-col>
   </v-row>
@@ -100,9 +99,11 @@ const items = [
 
 <style scoped>
 
-.v-card-title{
+div.v-card-title{
   font-weight: bold !important;
+  font-size: 24px;
 }
+
 
 .v-list-item-title{
   font-weight: bold;
@@ -117,11 +118,6 @@ p {
   text-overflow: ellipsis;
 }
 
-.scroll-container {
-  display: flex;
-  min-height: 0;
-  align-self: center;
-}
 .container-item-img {
   width: 50%;
   border-radius: 5%;
