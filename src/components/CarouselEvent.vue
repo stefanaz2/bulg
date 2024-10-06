@@ -20,6 +20,12 @@ defineProps({ event: Object })
   align-self: center;
 }
 
+@media only screen and (max-width: 400px) {
+  img {
+    min-width: 200px !important;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   img {
     min-width: 250px;
