@@ -18,8 +18,6 @@ defineProps({ event: Object })
 .text {
   float: right;
   align-self: center;
-  padding-left: 5rem;
-  flex-grow: 0.75;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -36,7 +34,7 @@ defineProps({ event: Object })
   }
 }
 img {
-  padding: 1rem;
+  padding: 0;
   width: 100%;
   height: auto;
   border-radius: 10%;
@@ -44,6 +42,7 @@ img {
 
 .hero{
   height: 500px;
+  padding: 2rem;
 }
 
 p {
