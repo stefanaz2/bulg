@@ -40,6 +40,7 @@ img {
   width: 100%;
   height: auto;
   border-radius: 10%;
+  max-height:465px;
 }
 
 .hero{
