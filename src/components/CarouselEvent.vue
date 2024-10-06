@@ -1,5 +1,5 @@
 <template>
-  <v-row class="hero">
+  <v-row class="hero fill-height">
     <v-col class="text">
       <h2>{{ event.title }}</h2>
       <p>&emsp;{{ event.description }}</p>
@@ -24,11 +24,11 @@ defineProps({ event: Object })
 
 @media only screen and (max-width: 1400px) {
   img {
-    min-width: 200px;
+    min-width: 250px;
     width: 100% !important;
-    max-height: 300px;
-    height: auto;
+    height: auto !important;
     border-radius: 10%;
+    align-self: center;
   }
 
   .hero{
@@ -48,7 +48,6 @@ img {
 
 p {
   padding-top: 1rem;
-
   -webkit-line-clamp: 4;
   line-clamp: 4;
   overflow: hidden;

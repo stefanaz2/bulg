@@ -1,6 +1,6 @@
 <template>
-  <v-carousel height="fit-content" show-arrows="hover" hide-delimiters>
-    <v-carousel-item v-for="(item, i) in items" :key="i">
+  <v-carousel class="fill-height" show-arrows="hover" hide-delimiters>
+    <v-carousel-item style="align-self: center;" v-for="(item, i) in items" :key="i">
       <CarouselEvent :event="item" />
     </v-carousel-item>
   </v-carousel>

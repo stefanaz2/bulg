@@ -63,7 +63,7 @@ const items = [
 <template>
   <v-row class="lg-fill-height">
     <v-col class="d-flex flex-column lg-fill-height v-col-lg-8 v-col-12" style="margin: 0 auto 1rem auto">
-      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem">
+      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem; min-height: 300px;">
         <HomeCarousel />
       </v-card>
       <v-card :variant="'outlined'" elevation="5">
@@ -79,7 +79,7 @@ const items = [
             <template v-slot:default="{ item }">
               <v-list-item>
                 <div class="text-flex">
-                  <div style="display: flex; flex-wrap: wrap">
+                  <div style="align-self: center;">
                     <span>
                       <v-list-item-title> {{ item.title }} </v-list-item-title>
                     </span>
@@ -121,6 +121,8 @@ p {
 .container-item-img {
   width: 50%;
   border-radius: 5%;
+  height: 80%;
+  margin: auto;
 }
 
 .text-flex {

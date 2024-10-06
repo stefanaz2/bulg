@@ -9,3 +9,7 @@
 img{
   object-fit: cover;
 }
+
+.v-responsive__content{
+  align-self: center;
+}
