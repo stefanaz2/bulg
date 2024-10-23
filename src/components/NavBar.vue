@@ -5,7 +5,7 @@
       <img
         alt="bulgarian website logo"
         class="logo"
-        src="@/assets/bg_can_logo.png"
+        src="/images/bg_can_logo.png"
         width="100"
         height="100%"
       />
