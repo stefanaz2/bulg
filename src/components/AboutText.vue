@@ -1,4 +1,9 @@
 <template>
+  <v-container>
+
+
+  <v-row>
+  <v-col>
   <section>
     <h1>About</h1>
     <p>
@@ -111,12 +116,15 @@
       responded by giving their best to Canada.
     </p>
   </section>
+</v-col>
+</v-row>
+</v-container>
 </template>
 
 <style scoped>
-* {
+/* * {
   margin: 1rem 7rem 1rem 7rem;
-}
+} */
 
 :is(h1, h2, h3, h4, h5, h6) {
   color: #000000;
