@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import CalendarComponent from '@/components/CalendarComponent.vue'
 import HomeCarousel from '@/components/HomeCarousel.vue'
 
@@ -62,8 +62,11 @@ const items = [
 
 <template>
   <v-row class="lg-fill-height">
-    <v-col class="d-flex flex-column lg-fill-height v-col-lg-8 v-col-12" style="margin: 0 auto 1rem auto">
-      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem; min-height: 300px;">
+    <v-col
+      class="d-flex flex-column lg-fill-height v-col-lg-8 v-col-12"
+      style="margin: 0 auto 1rem auto"
+    >
+      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem; min-height: 300px">
         <HomeCarousel />
       </v-card>
       <v-card :variant="'outlined'" elevation="5">
@@ -71,41 +74,47 @@ const items = [
       </v-card>
     </v-col>
 
-    <v-col  class="d-flex flex-column lg-fill-height v-col-lg-4 v-col-12" style="margin:0px auto 1rem">
+    <v-col
+      class="d-flex flex-column lg-fill-height v-col-lg-4 v-col-12"
+      style="margin: 0px auto 1rem"
+    >
       <v-card class="mx-auto d-flex flex-column fill-height" :variant="'outlined'" elevation="5">
         <v-card-title>More stories</v-card-title>
         <v-divider></v-divider>
-          <v-virtual-scroll style="height:500px; overflow: auto;" :items="items" :item-height="174">
-            <template v-slot:default="{ item }">
-              <v-list-item>
-                <div class="text-flex">
-                  <div style="align-self: center;">
-                    <span>
-                      <v-list-item-title> {{ item.title }} </v-list-item-title>
-                    </span>
-                    <p style="max-height: 100px">&emsp;{{ item.description }}</p>
-                  </div>
-
-                  <img :src="item.src" class="container-item-img" />
-                </div>
-                <v-divider style="margin-top: 3px"></v-divider>
-              </v-list-item>
-            </template>
-          </v-virtual-scroll>
+        <v-virtual-scroll style="height: 500px; overflow: auto" :items="items" :item-height="174">
+          <template v-slot:default="{ item }">
+            <v-list-item>
+              <div class="text-flex">
+                <v-row>
+                  <v-col style="align-content: center">
+                    <div>
+                      <span>
+                        <v-list-item-title> {{ item.title }} </v-list-item-title>
+                      </span>
+                      <p style="max-height: 100px">&emsp;{{ item.description }}</p>
+                    </div>
+                  </v-col>
+                  <v-col>
+                    <img :src="item.src" class="container-item-img" />
+                  </v-col>
+                </v-row>
+              </div>
+              <v-divider style="margin-top: 3px"></v-divider>
+            </v-list-item>
+          </template>
+        </v-virtual-scroll>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <style scoped>
-
-div.v-card-title{
+div.v-card-title {
   font-weight: bold !important;
   font-size: 24px;
 }
 
-
-.v-list-item-title{
+.v-list-item-title {
   font-weight: bold;
 }
 
@@ -119,14 +128,14 @@ p {
 }
 
 .container-item-img {
-  width: 50%;
+  width: 100%;
   border-radius: 5%;
-  height: 80%;
+  /* height: 80%; */
   margin: auto;
 }
 
 .text-flex {
   display: flex;
-  padding:1rem
+  padding: 1rem;
 }
 </style>

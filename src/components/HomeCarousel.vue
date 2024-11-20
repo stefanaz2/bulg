@@ -1,11 +1,3 @@
-<template>
-  <v-carousel  show-arrows="hover" hide-delimiters>
-    <v-carousel-item style="align-self: center;" v-for="(item, i) in items" :key="i">
-      <CarouselEvent :event="item" />
-    </v-carousel-item>
-  </v-carousel>
-</template>
-
 <script>
 import CarouselEvent from '@/components/CarouselEvent.vue'
 
@@ -39,3 +31,11 @@ export default {
   }
 }
 </script>
+
+<template>
+  <v-carousel show-arrows="hover" hide-delimiters>
+    <v-carousel-item style="align-self: center" v-for="(item, i) in items" :key="i">
+      <CarouselEvent :event="item" />
+    </v-carousel-item>
+  </v-carousel>
+</template>

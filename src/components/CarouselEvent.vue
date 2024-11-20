@@ -1,3 +1,7 @@
+<script setup>
+defineProps({ event: Object })
+</script>
+
 <template>
   <v-row class="hero">
     <v-col class="text">
@@ -9,10 +13,6 @@
     </v-col>
   </v-row>
 </template>
-
-<script setup>
-defineProps({ event: Object })
-</script>
 
 <style scoped>
 .text {
@@ -40,10 +40,10 @@ img {
   width: 100%;
   height: auto;
   border-radius: 10%;
-  max-height:465px;
+  max-height: 465px;
 }
 
-.hero{
+.hero {
   height: 100%;
   padding: 2rem;
 }
