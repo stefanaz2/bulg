@@ -29,23 +29,24 @@ export default {
   }
 }
 </script>
+
 <template>
   <FullCalendar :options="calendarOptions" />
 </template>
-<style>
 
-.fc{
+<style>
+.fc {
   white-space: nowrap;
 }
 
-.fc .fc-toolbar{
+.fc .fc-toolbar {
   justify-content: center;
-  padding:1rem;
-  flex-wrap:wrap;
-  gap:2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.fc .fc-toolbar-title{
+.fc .fc-toolbar-title {
   white-space: nowrap;
 }
 

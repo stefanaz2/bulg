@@ -6,10 +6,30 @@
   font-weight: normal;
 }
 
-img{
+img {
   object-fit: cover;
 }
 
-.v-responsive__content{
+.v-responsive__content {
   align-self: center;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  color: #000000;
+  /* font-size: 18px; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: left;
+}
+
+p,
+b {
+  color: #4c4c4c;
+  /* font-size: 12px; */
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  /* line-height: 1.7em; */
+  text-align: justify;
+}
+
+section {
+  margin-bottom: 3rem;
 }
