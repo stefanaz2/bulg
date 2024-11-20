@@ -94,7 +94,7 @@ const items = [
                       <p style="max-height: 100px">&emsp;{{ item.description }}</p>
                     </div>
                   </v-col>
-                  <v-col>
+                  <v-col style="align-content: center">
                     <img :src="item.src" class="container-item-img" />
                   </v-col>
                 </v-row>
