@@ -113,3 +113,12 @@ export default {
     </nav>
   </v-navigation-drawer> -->
 </template>
+
+<style>
+.v-tabs--align-tabs-title:not(.v-slide-group--has-affixes) .v-tab:first-child {
+  margin-inline-start: 0;
+}
+.v-toolbar-title__placeholder {
+  padding-bottom: 5px;
+}
+</style>
