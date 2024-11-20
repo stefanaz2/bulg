@@ -13,23 +13,35 @@
 export default {
   data() {
     return {
-      tab: null,
+      currentItem: 'tab-Home',
       items: [
         { title: 'Home', link: '/' },
         { title: 'About', link: '/about' },
-        { title: 'Churches', link: '/churches' },
+        { title: 'Churches', link: '/churches' }
+      ],
+      more: [
         { title: 'Events', link: '/events' },
         { title: 'Theatres', link: '/theatres' },
         { title: 'Dance', link: '/dances' }
       ],
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
+  },
+  methods: {
+    addItem(item) {
+      const removed = this.items.splice(0, 1)
+      this.items.push(...this.more.splice(this.more.indexOf(item), 1))
+      this.more.push(...removed)
+      this.$nextTick(() => {
+        this.currentItem = 'tab-' + item
+      })
+    }
   }
 }
 </script>
 
 <template>
-  <v-app-bar :elevation="2" rounded style="padding-left: 2rem">
+  <v-app-bar :elevation="2" rounded>
     <!-- <template v-slot:prepend>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <img
@@ -53,7 +65,7 @@ export default {
     >
 
     <template v-slot:extension>
-      <v-tabs v-model="tab" align-tabs="title">
+      <v-tabs v-model="currentItem" align-tabs="title" fixed-tabs>
         <v-tab
           v-for="item in items"
           :key="item.title"
@@ -61,6 +73,33 @@ export default {
           :value="item.title"
           :to="item.link"
         ></v-tab>
+
+        <v-menu v-if="more.length">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              class="align-self-center me-4"
+              height="100%"
+              rounded="0"
+              variant="plain"
+              v-bind="props"
+            >
+              more
+
+              <v-icon icon="mdi-menu-down" end></v-icon>
+            </v-btn>
+          </template>
+
+          <v-list class="bg-grey-lighten-3">
+            <v-list-item
+              v-for="item in more"
+              :key="item.title"
+              :title="item.title"
+              :to="item.link"
+              @click="addItem(item)"
+              @keyup.space="addItem(item)"
+            ></v-list-item>
+          </v-list>
+        </v-menu>
       </v-tabs>
     </template>
   </v-app-bar>

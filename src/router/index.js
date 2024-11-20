@@ -58,7 +58,7 @@ const router = createRouter({
       component: TheatresView
     },
     {
-      path: '/dances/:id',
+      path: '/theatres/:id',
       component: TheatreView
     }
   ]
