@@ -9,13 +9,15 @@ export default {
 </script>
 
 <template>
-  <v-card
-    style="margin: 1rem"
-    v-for="(event, index) in events"
-    :key="index"
-    :title="event"
-    :to="`/events/${index + 1}`"
-    :text="`event ${index + 1} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`"
-  >
-  </v-card>
+  <v-container>
+    <v-card
+      style="margin: 1rem"
+      v-for="(event, index) in events"
+      :key="index"
+      :title="event"
+      :to="`/events/${index + 1}`"
+      :text="`Event ${index + 1} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`"
+    >
+    </v-card>
+  </v-container>
 </template>
