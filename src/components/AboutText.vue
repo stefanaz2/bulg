@@ -5,10 +5,7 @@
         <section>
           <h1>About</h1>
           <p>
-            &emsp; The Bulgarian Canadian Society is a non-political, cultural, charitable
-            organization, created in the early fifties, endeavoring to promote better ties and
-            understanding between Canadian of Bulgarian descent and their respective native and
-            adopted countries and people.
+            &emsp; {{ $t('message.paragraph1') }}
           </p>
           <p>
             From March 7, 1957, to present date, the Bulgarian Canadian Society remains the
