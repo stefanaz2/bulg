@@ -101,6 +101,13 @@ export default {
           </v-list>
         </v-menu>
       </v-tabs>
+      <v-btn
+        @click="$i18n.locale == 'en' ? ($i18n.locale = 'bg') : ($i18n.locale = 'en')"
+        style="margin-left: auto; margin-right: 1rem"
+      >
+        <span v-if="$i18n.locale == 'en'">Bulgarian</span>
+        <span v-if="$i18n.locale == 'bg'">English</span>
+      </v-btn>
     </template>
   </v-app-bar>
 
