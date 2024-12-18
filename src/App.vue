@@ -5,7 +5,7 @@ import NavBar from './components/NavBar.vue'
 
 <template>
   <v-app>
-    <header style="background-color: #2658cb; padding-bottom: 3rem">
+    <header style="padding-bottom: 3rem">
       <div class="wrapper">
         <NavBar />
       </div>
