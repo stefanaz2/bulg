@@ -1,7 +1,15 @@
 <script>
+import { useWindowSize } from '@vueuse/core'
+
 export default {
+  setup() {
+    const { width } = useWindowSize()
+
+    return { width }
+  },
   data() {
     return {
+      drawer: false,
       currentItem: 'tab-Home',
       items: [
         { title: 'Events' },
@@ -79,6 +87,9 @@ export default {
         this.$t('message.art'),
         this.$t('message.other')
       ]
+    },
+    drawerStatus() {
+      return this.drawer && this.width < 1100
     }
   }
 }
@@ -86,6 +97,8 @@ export default {
 
 <template>
   <v-app-bar :elevation="2" rounded>
+    <v-app-bar-nav-icon v-if="width < 1100" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
     <img
       alt="bulgarian website logo"
       class="logo"
@@ -98,7 +111,7 @@ export default {
       >Bulgarian Canadian Society</v-app-bar-title
     >
 
-    <template v-slot:extension>
+    <template v-if="width >= 1100" v-slot:extension>
       <v-tabs v-model="currentItem" align-tabs="title" fixed-tabs>
         <v-menu v-for="(item, index) in items" :key="index" :text="item.title">
           <template v-slot:activator="{ props }">
@@ -136,6 +149,24 @@ export default {
       <span v-if="$i18n.locale == 'bg'">English</span>
     </v-btn>
   </v-app-bar>
+  <v-navigation-drawer v-model="drawerStatus" :temporary="true">
+    <v-list-item title="B.C.S." subtitle="Navigation"></v-list-item>
+    <v-divider></v-divider>
+    <nav>
+      <v-list-item v-for="(item, index) in items" :key="index" :value="index">
+        {{ itemTitles[index] }}
+        <v-divider></v-divider>
+        <v-list-item
+          link
+          v-for="(subItem, index) in item.subtitles"
+          :key="index"
+          :value="index"
+          :title="subItem.title"
+          :to="subItem.link"
+        ></v-list-item>
+      </v-list-item>
+    </nav>
+  </v-navigation-drawer>
 </template>
 
 <style>
