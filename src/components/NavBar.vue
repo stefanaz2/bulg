@@ -142,11 +142,14 @@ export default {
       </v-tabs>
     </template>
     <v-btn
+      variant="outlined"
       @click="$i18n.locale == 'en' ? ($i18n.locale = 'bg') : ($i18n.locale = 'en')"
-      style="margin-left: auto; margin-right: 1rem"
+      style="margin-left: auto; margin-right: 1rem; font-weight: bolder; color: #000000"
     >
-      <span v-if="$i18n.locale == 'en'">Bulgarian</span>
-      <span v-if="$i18n.locale == 'bg'">English</span>
+      <span v-if="$i18n.locale == 'en' && width >= 800">Bulgarian</span>
+      <span v-if="$i18n.locale == 'en' && width < 800">BG</span>
+      <span v-if="$i18n.locale == 'bg' && width >= 800">English</span>
+      <span v-if="$i18n.locale == 'bg' && width < 800">EN</span>
     </v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawerStatus" :temporary="true">
