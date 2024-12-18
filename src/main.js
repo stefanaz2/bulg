@@ -18,31 +18,47 @@ const vuetify = createVuetify({
 })
 
 const i18n = createI18n({
-    locale: 'en',
-    fallbackLocale: 'bg',
-    messages: {
-      en: {
-        message: {
-          paragraph1: `The Bulgarian Canadian Society is a non-political, cultural, charitable
+  locale: 'en',
+  fallbackLocale: 'bg',
+  messages: {
+    en: {
+      message: {
+        paragraph1: `The Bulgarian Canadian Society is a non-political, cultural, charitable
             organization, created in the early fifties, endeavoring to promote better ties and
             understanding between Canadian of Bulgarian descent and their respective native and
-            adopted countries and people.`
-        }
-      },
-      bg: {
-        message: {
-          paragraph1: `Българско канадско дружество е неполитическо, културно, благотворително дружество
+            adopted countries and people.`,
+        events: 'Events',
+        theatres: 'Theatres',
+        schools: 'Schools',
+        churches: 'Churches',
+        ensembles: 'Ensembles',
+        groups: 'Groups',
+        art: 'Art',
+        other: 'Other'
+      }
+    },
+    bg: {
+      message: {
+        paragraph1: `Българско канадско дружество е неполитическо, културно, благотворително дружество
             организация, създадена в началото на петдесетте години, която се стреми да насърчава по-добри връзки и
             разбирателство между канадци от български произход и техните съответни местни и
-            осиновени държави и хора.`
-        }
+            осиновени държави и хора.`,
+        events: 'Събития',
+        theatres: 'Театри',
+        schools: 'Училища',
+        churches: 'Църкви',
+        ensembles: 'Състави',
+        groups: 'Групи',
+        art: 'Искуство',
+        other: 'Други'
       }
     }
+  }
 })
 
 const app = createApp(App)
 
-app.use(router )
+app.use(router)
 
 app.use(vuetify)
 
