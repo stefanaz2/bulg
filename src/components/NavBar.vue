@@ -16,7 +16,7 @@ export default {
         {
           title: this.$t('message.theatres'),
           subtitles: [
-            { title: 'Отражение', link: '' },
+            { title: 'Отражение', link: 'https://reflectiontheatre.com/' },
             { title: 'Зад океана', link: '' }
           ]
         },
@@ -135,7 +135,8 @@ export default {
               :key="index"
               :value="index"
               :title="subItem.title"
-              :to="subItem.link"
+              :href="subItem.link != '' ? subItem.link : ''"
+              target="_blank"
             ></v-list-item>
           </v-list>
         </v-menu>

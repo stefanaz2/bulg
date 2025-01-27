@@ -15,7 +15,7 @@ import NavBar from './components/NavBar.vue'
     </v-main>
     <hr />
     <v-footer style="align-self: center"
-      >© BULGARIAN CANADIAN SOCIETY 2011. All Rights Reserved.
+      >© BULGARIAN CANADIAN SOCIETY 2025. All Rights Reserved.
     </v-footer>
   </v-app>
 </template>

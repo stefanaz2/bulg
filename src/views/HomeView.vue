@@ -66,15 +66,15 @@ const items = [
       class="d-flex flex-column lg-fill-height v-col-lg-8 v-col-12"
       style="margin: 0 auto 1rem auto"
     >
-      <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem; min-height: 300px">
+      <!-- <v-card :variant="'outlined'" elevation="5" style="margin-bottom: 2rem; min-height: 300px">
         <HomeCarousel />
-      </v-card>
+      </v-card> -->
       <v-card :variant="'outlined'" elevation="5">
         <CalendarComponent style="margin: 5px" />
       </v-card>
     </v-col>
 
-    <v-col
+    <!-- <v-col
       class="d-flex flex-column lg-fill-height v-col-lg-4 v-col-12"
       style="margin: 0px auto 1rem"
     >
@@ -104,7 +104,7 @@ const items = [
           </template>
         </v-virtual-scroll>
       </v-card>
-    </v-col>
+    </v-col> -->
   </v-row>
 </template>
 
