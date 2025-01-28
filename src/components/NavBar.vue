@@ -166,7 +166,8 @@ export default {
           :key="index"
           :value="index"
           :title="subItem.title"
-          :to="subItem.link"
+          :href="subItem.link != '' ? subItem.link : ''"
+          target="_blank"
         ></v-list-item>
       </v-list-item>
     </nav>
